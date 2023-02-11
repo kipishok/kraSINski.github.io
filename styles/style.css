@@ -1,0 +1,86 @@
+* {box-sizing: border-box;}
+body {
+    background: #DCDCDC;
+}
+header {
+    background: #6D326D;
+    text-align: center;
+}
+header a {
+    text-decoration: none;
+    outline: none;
+    display: block;
+    transition: .3s ease-in-out;
+}
+.logo {
+    width: 100%;
+    margin: 0 auto;
+    border: 5px solid transparent;
+    border-image: linear-gradient(to left top,whitesmoke 10%,  transparent 30%, transparent 70%, pink 90%);
+    border-image-slice: 1;
+    color: whitesmoke; /* все что выше это рамка градиент вокруг фрейма с лого*/
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 100px;
+    padding: 20px 0;
+    margin-top: 1px;
+}
+nav {
+    display: flexbox;
+    margin: 0;
+    width: 100%;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.topmenu:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.topmenu > li {
+    width: 25%;
+    float: left;
+    position: relative;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+.topmenu > li > a { /* соответственно все блоки с текстом в менюшке */
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    color: whitesmoke;
+    padding: 0px;
+}
+.topmenu li a:hover {color: #d5b45b;} /*при наведении мышкой меняте цвет на указанный */
+
+.submenu {
+    background: #273037;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 5;
+    width: 200px; /*ширина выпадающего окна*/
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+    transition: .2s ease-in-out;
+}
+.submenu a {
+    color: white;
+    text-align: center;
+    padding: 12px 15px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.submenu li:last-child a {border-bottom: none;}
+.topmenu > li:hover .submenu {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.topmenu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
